@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title> Discount Calculator </title>
+<link rel="stylesheet" href="style.css">
+<script>
+    function calculate(){
+        var input=document.getElementById("sky1");
+        let value=input.value;
+        var element=document.getElementById("sky2");
+        var amount=document.getElementById("tip");
+        let person=document.getElementById("sky4")
+           let totalP = person.value;
+        var index=element.selectedIndex;
+        var status=element.options[index].value;
+        let tip=0;
+        if(status=="good"){
+            tip=value/10;
+        }
+        else if(status=="better"){
+          tip=(value/10)*2;
+        }
+        else if(status=="best"){
+           tip=(value/10)*3
+        }  
+        else {
+            tip=value*0;
+        }  
+       amount.textContent=tip/totalP; 
+        
+    }
+   
+</script>
+
+</head>
+
+
+<body style="background-color: brown;">
+    
+    <div class="container">  
+        <div>
+            <h1>TIP CALCULATOR</h1>
+        </div>
+        <div> 
+            <h2> How much was your Bill?</h2>
+            
+            <input type="text" id="sky1"/>
+        </div>
+        
+        <div>
+            <h2>Rate our Service ?</h2>
+            <select id="sky2">
+                <option value="good">10%-Good</option>
+                <option value="better">20%-Better</option>
+                <option value="best">30%-Outstanding</option>
+                <option value="poor">0%-poor</option>
+            </select>
+        </div>
+        <div>
+            <h2>How many people are sharing the Bill?</h2>
+            <input type="text" id="sky4" />
+        </div>
+        
+        
+        
+      <div>
+        <button type="button" class="button" onclick="calculate()">Calculate Tip</button>
+      </div>
+            <div>
+                <h3>Calculated TIP AMOUNT for each: </h3>
+                <h3 id="tip"></h3>
+            </div>
+        
+       
+    </div>
+
+</body>
+</html>
